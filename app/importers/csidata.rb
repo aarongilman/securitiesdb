@@ -151,7 +151,7 @@ class CsiDataImporter
   end
 
   def lookup_exchange(csi_security)
-    csi_exchange_pair = [csi_security.exchange, csi_security.child_exchange]
+    csi_exchange_pair = [csi_security.exchange, csi_security.sub_exchange]
     exchange_label = CSI_EXCHANGE_PAIR_TO_EXCHANGE_LABEL_MAP[ csi_exchange_pair ]
     @exchange_memo[exchange_label] ||= Exchange.first(label: exchange_label)
   end
@@ -222,7 +222,7 @@ class CsiDataImporter
   #   :pre_switch_cf,
   #   :last_volume,
   #   :type,
-  #   :child_exchange,
+  #   :sub_exchange,
   #   :currency
   # )
   def create_listed_security(csi_security, exchange, default_security_type)
@@ -341,8 +341,8 @@ class CsiDataImporter
     security_type_name = lookup_security_type(csi_security, default_security_type)
     security = CreateSecurity.run(csi_security.name, security_type_name)
     start_date = csi_security.start_date ? convert_date(csi_security.start_date) : Date.today_datestamp
-    security.classify("Industry", "CSI", csi_security.industry || UNKNOWN_INDUSTRY_NAME, start_date)
-    security.classify("Sector", "CSI", csi_security.sector || UNKNOWN_SECTOR_NAME, start_date)
+    #security.classify("Industry", "CSI", csi_security.industry || UNKNOWN_INDUSTRY_NAME, start_date)
+    #security.classify("Sector", "CSI", csi_security.sector || UNKNOWN_SECTOR_NAME, start_date)
     security
   end
 
@@ -362,7 +362,7 @@ class CsiDataImporter
   #   :pre_switch_cf,
   #   :last_volume,
   #   :type,
-  #   :child_exchange,
+  #   :sub_exchange,
   #   :currency
   # )
   def update_listed_security(listed_security, csi_security, default_security_type)
@@ -383,11 +383,11 @@ class CsiDataImporter
     end
 
     # potentially update security's industry and sector classifications
-    csi_industry = csi_security.industry || UNKNOWN_INDUSTRY_NAME
-    security.classify("Industry", "CSI", csi_industry, Date.today_datestamp)
+    #csi_industry = csi_security.industry || UNKNOWN_INDUSTRY_NAME
+    #security.classify("Industry", "CSI", csi_industry, Date.today_datestamp)
 
-    csi_sector = csi_security.sector || UNKNOWN_SECTOR_NAME
-    security.classify("Sector", "CSI", csi_sector, Date.today_datestamp)
+    #csi_sector = csi_security.sector || UNKNOWN_SECTOR_NAME
+    #security.classify("Sector", "CSI", csi_sector, Date.today_datestamp)
 
 
     # update ListedSecurity

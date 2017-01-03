@@ -68,13 +68,13 @@ def main
     importer.import
   end
 
-  # if opts.yahoo_eod? || opts.all?
-  #   importer = YahooEodImporter.new
-  #   importer.import
-  #
-  #   importer = YahooSplitsAndDividendsImporter.new
-  #   importer.import
-  # end
+  if opts.yahoo_eod? || opts.all?
+     importer = YahooEodImporter.new
+     importer.import
+
+     importer = YahooSplitsAndDividendsImporter.new
+     importer.import
+  end
 
   if opts.quandl_fundamentals? || opts.all?
     importer = QuandlFundamentalsImporter.new(quandl_fundamentals_client)

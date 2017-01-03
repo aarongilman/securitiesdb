@@ -12,15 +12,15 @@ module CsiData
     :is_active,
     :start_date,
     :end_date,
-    :sector,
-    :industry,
+    #:sector,
+    #:industry,
     :conversion_factor,
     :switch_cf_date,
     :pre_switch_cf,
-    :last_volume,
+    #:last_volume,
     :type,
-    :child_exchange,
-    :currency
+    :sub_exchange
+    #:currency
   )
 
   class Client
@@ -36,7 +36,7 @@ module CsiData
       foreign_stock_indices: "http://www.csidata.com/factsheets.php?type=stock&format=csv&exchangeid=86"
     }
 
-    SYMBOL_LISTING_HEADER = "CsiNumber,Symbol,Name,Exchange,IsActive,StartDate,EndDate,Sector,Industry,ConversionFactor,SwitchCfDate,PreSwitchCf,LastVolume,Type,ChildExchange,Currency"
+    SYMBOL_LISTING_HEADER = "CsiNumber,Symbol,Name,Exchange,IsActive,StartDate,EndDate,ConversionFactor,SwitchCfDate,PreSwitchCf,SubExchange"
 
     def all_stocks
       get_securities_of_type(:all_stocks)
