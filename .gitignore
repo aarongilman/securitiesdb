@@ -2,4 +2,3 @@
 .idea
 *.log
 data
-config/application.yml

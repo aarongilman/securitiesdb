@@ -1,0 +1,8 @@
+company_name_search_database_dir: data/security_name_dbs
+database:
+  connection_string: postgres://elvflbzt:FxoSvg0chBQQtDh7OBm73IphJpCQ6MR2@elmer-01.db.elephantsql.com:5432/elvflbzt
+log_level: info
+database_log_level: error
+quandl:
+  api_key:  ZXWrUMgVHYz4kgK9FARR
+  api_version: "2015-04-09"
