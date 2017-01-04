@@ -119,5 +119,5 @@ class QuandlEodImporter
       end
     end
   end
-
+  rescue nil
 end
