@@ -94,7 +94,7 @@ class QuandlEodImporter
     log "Importing #{eod_bars.count} EOD bars from Quandl EOD database for security \"#{security.name}\"."
 
     eod_bars.each do |eod_bar|
-      EodBar.create(
+      EodBar.create_or_update(
         security_id: security.id,
         date: eod_bar.date,
         open: eod_bar.unadjusted_open,
@@ -119,5 +119,4 @@ class QuandlEodImporter
       end
     end
   end
-  rescue nil
 end
