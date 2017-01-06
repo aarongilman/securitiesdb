@@ -5,7 +5,7 @@ require 'zip'
 # QuandlFundamentals retrieves the fundamentals data on US-traded securities
 # The Quandl Fundamentals dataset is conceptually a set of security-attribute-value-date tuples
 module QuandlFundamentals
-  Indicator = Struct.new(:label, :title, :available_dimensions, :statement, :description, :na_value, :units)
+  Indicator = Struct.new(:label, :title, :available_dimensions, :statement, :description, :na_value, :units, :api)
   IndicatorValue = Struct.new(:date, :value)
 
   Security = Struct.new(
@@ -55,7 +55,7 @@ module QuandlFundamentals
     def indicators
       tsv_contents = Net::HTTP.get(URI(INDICATORS_URL))
       tsv_contents.encode!("UTF-8", "ISO-8859-1")   # Sharadar encodes their CSV files with the ISO-8859-1 character set, so we need to convert it to UTF-8
-      rows = CSV.parse(tsv_contents, headers: false, return_headers: false, col_sep: "\t")
+      rows = CSV.parse(tsv_contents, headers: false, return_headers: false, col_sep: "\t", quote_char: "|")
 
       if rows.first == INDICATOR_LISTING_HEADER
         rows.drop(1).map {|row| Indicator.new(*row.map{|s| s && s.strip }) }
