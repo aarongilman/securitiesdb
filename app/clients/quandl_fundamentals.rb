@@ -31,9 +31,9 @@ module QuandlFundamentals
   class Client
     ZIP_FILE_PATH = "./data/quandl_fundamentals_database_<DATE>.zip"
     TICKER_LIST_URL = "http://www.sharadar.com/meta/tickers.txt"        # referenced at https://www.quandl.com/data/SF1/documentation/tickers
-    TICKER_LIST_HEADER = "Ticker	Name	CUSIP	ISIN	Currency	Sector	Industry	Last Updated	Prior Tickers	Ticker Change Date	Related Tickers	Exchange	SIC	Perma Ticker	Location	Delisted From	Is Foreign"
+    TICKER_LIST_HEADER = "Ticker	Name	CUSIP	Fama Industry	Currency	Sector	Industry	Last Updated	Prior Tickers	Ticker Change Date	Related Tickers	Exchange	SIC	Perma Ticker	Location	Delisted From	Is Foreign"
     INDICATORS_URL = "http://www.sharadar.com/meta/indicators.txt"      # referenced at https://www.quandl.com/data/SF1/documentation/indicators
-    INDICATOR_LISTING_HEADER = ["Indicator", "Title", "Available Dimensions", "Statement", "Description", "NA Value", "Units"]
+    INDICATOR_LISTING_HEADER = ["Indicator", "Title", "Available Dimensions", "Statement", "Description", "NA Value", "Units", "API"]
     CSV_FIELD_COUNT = 3
     DATABASE_NAME = "SF1"
 
