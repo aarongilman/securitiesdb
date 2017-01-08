@@ -1,6 +1,6 @@
 company_name_search_database_dir: data/security_name_dbs
 database:
-  connection_string: postgres://aarongilman1:FxoSvg0chBQQtDh7OBm73IphJpCQ6MR2@securitiesdb.cic61ctm5cbx.us-east-1.rds.amazonaws.com:5432/securitiesdb
+  connection_string: postgres://aarongilman1:FxoSvg0chBQQtDh7OBm73IphJpCQ6MR2@securitiesdb.cic61ctm5cbx.us-east-1.rds.amazonaws.com:5432/securitiesdb2
 
 log_level: info
 database_log_level: error
