@@ -1,6 +1,7 @@
 company_name_search_database_dir: data/security_name_dbs
 database:
-  connection_string: postgres://elvflbzt:FxoSvg0chBQQtDh7OBm73IphJpCQ6MR2@elmer-01.db.elephantsql.com:5432/elvflbzt
+  connection_string: postgres://aarongilman1:FxoSvg0chBQQtDh7OBm73IphJpCQ6MR2@securitiesdb.cic61ctm5cbx.us-east-1.rds.amazonaws.com:5432/securitiesdb
+
 log_level: info
 database_log_level: error
 quandl:
