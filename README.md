@@ -1,4 +1,4 @@
-securitiesdb
+securitiesdb2
 ============
 
 This project populates a local Postgres database with security symbols, un-adjusted EOD data, splits, dividends, company fundamentals, and options data. Economic indicators - employment and labor statistics, inflation rates, interest rates, exchange rates, imports/exports, domestic production stats, treasury rates, debt, tax revenues, etc. - are also available.
@@ -20,7 +20,7 @@ excellent articles - [(1) Securities Master Databases for Algorithmic Trading](h
 
 1. ```git clone``` this project
    ```
-   git clone https://github.com/davidkellis/securitiesdb.git
+   git clone https://github.com/davidkellis/securitiesdb2.git
    ```
 
 2. [Optional] If you want any data from Quandl.com, create an account at [Quandl.com](https://www.quandl.com/) and configure project with your Quandl API key and version information:
@@ -42,7 +42,7 @@ excellent articles - [(1) Securities Master Databases for Algorithmic Trading](h
 3. [Optional] If you want any historical options data from OptionData.net:
    1. Place an order for data
    2. Download the zipped data sets from the link they send you by e-mail
-   3. Copy the downloaded zip files into the data/ directory within the securitiesdb project directory
+   3. Copy the downloaded zip files into the data/ directory within the securitiesdb2 project directory
 
 4. Install Postgres libraries so that step 7 can install the pg gem (this is only applicable if using MRI, as JRuby doesn't need the pg gem).
 
