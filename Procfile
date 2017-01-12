@@ -1,1 +1,1 @@
-worker: bundle exec script/import '--quandl-fundamentals'
+worker: bundle exec script/import '--all'
